@@ -8,12 +8,11 @@ public class TwoRangesSum {
         } else if (lastInRow < 0) {
             System.out.println("last number in row is negative");
         } else {
-            for (int i = 1; i <= lastInRow; i++) {
-                if (i % numberToSkip != 0) {
-                    countedSum += i;
-                } else {
-                    skippedSum += i;
-                }
+            for (int i = 1; i <= numberToSkip; i++) {
+                skippedSum += i;
+            }
+            for (int i = numberToSkip + 1; i <= lastInRow; i++) {
+                countedSum += i;
             }
             System.out.println("skipped sum is " + skippedSum);
             System.out.println("counted sum is " + countedSum);
